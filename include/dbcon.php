@@ -6,9 +6,9 @@ $servername = "localhost";
 $username = "root"; 
   
 // Password is empty 
-$password = "";
+$password = "root";
 
-$db = "slp_db"; 
+$db = "ppms"; 
   
 $conn = new mysqli($servername, $username, $password, $db);
 
