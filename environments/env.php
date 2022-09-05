@@ -5,6 +5,6 @@
     $DB_USERNAME = "root";
     $DB_PASSWORD = "";
 
-    $base_url = "http://localhost/slp/";
+    $base_url = "http://localhost/dswd-slp/";
 
 ?>
