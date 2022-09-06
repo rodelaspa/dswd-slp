@@ -53,7 +53,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="slpa_details.php" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 SLP Association
@@ -199,7 +199,7 @@
           </li-->
       
       
-          <li class="nav-header">SETTINGS</li>
+          <!-- <li class="nav-header">SETTINGS</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
@@ -436,7 +436,7 @@
           </li>
 
           
-        </ul>
+        </ul> -->
       </nav>
       <!-- /.sidebar-menu -->
     </div>
