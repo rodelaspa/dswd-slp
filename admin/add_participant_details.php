@@ -143,7 +143,7 @@
                     <!-- Address -->
                     <div id="basicinfo-part" class="content" role="tabpanel" aria-labelledby="basicinfo-part-trigger">
                       <div class="row">
-                        <div class="col-sm-10">
+                        <div class="col-sm-12">
                           <div class="form-group">
                             <label>Address of the SLPA</label>
                             <div class="row">
@@ -191,33 +191,68 @@
                          
                         </div>
 
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Street</label>
+                            <input type="text" class="form-control" placeholder="Street">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Zone</label>
+                            <input type="text" class="form-control" placeholder="Zone">
+                          </div>
+                        </div>
+                        
                       </div>
                       
-                      <div class="form-group">
-                        <label>Street</label>
-                        <input type="text" class="form-control" placeholder="Street">
-                      </div>
-                      <div class="form-group">
-                        <label>Zone</label>
-                        <input type="text" class="form-control" placeholder="Zone">
-                      </div>
                       <button class="btn btn-default" onclick="stepper.previous()">Previous</button>
                       <button class="btn btn-primary" onclick="stepper.next()">Next</button>
                     </div>
 
-                    <!-- Objectives -->
+                    <!-- Other Details -->
                     <div id="information-part" class="content" role="tabpanel" aria-labelledby="information-part-trigger">
                       <div class="form-group">
-                        <label for="exampleInputFile">File input</label>
-                        <div class="input-group">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile">
-                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        <div class="icheck-primary d-inline">
+                            <input type="checkbox" id="checkboxPrimary1">
+                            <label for="checkboxPrimary1">
+                              Part of Indigineous People (IP) Group?
+                            </label>
                           </div>
-                          <div class="input-group-append">
-                            <span class="input-group-text">Upload</span>
+                        <select class="form-control select1" required>
+                            <option>Select IP Group</option>
+                            <option>Single</option>
+                            <option>Married</option>
+                            <option>Divorced</option>
+                            <option>Separated</option>
+                            <option>Widowed</option>
+                        </select>
+                      </div>
+                      <div class="row">
+                      <div class="col-sm-6">
+                        <!-- checkbox -->
+                        <div class="form-group">
+                          <div class="icheck-primary">
+                            <input type="checkbox" id="checkboxPrimary1">
+                            <label for="checkboxPrimary1">
+                              Head of the Family?
+                            </label>
+                          </div>
+                          <div class="icheck-primary">
+                            <input type="checkbox" id="checkboxPrimary2">
+                            <label for="checkboxPrimary2">
+                              Solo Parent?
+                            </label>
+                          </div>
+                          <div class="icheck-primary">
+                            <input type="checkbox" id="checkboxPrimary3">
+                            <label for="checkboxPrimary3">
+                              Attending School?
+                            </label>
                           </div>
                         </div>
+                      </div>
                       </div>
                       <button class="btn btn-primary" onclick="stepper.previous()">Previous</button>
                       <button type="submit" class="btn btn-primary">Submit</button>
@@ -225,8 +260,8 @@
                   </div>
                 </div>
                         
-                    </div>
                 </div>
+              </div>
             </section>
             <!-- /.section table -->
 
