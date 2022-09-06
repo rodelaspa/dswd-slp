@@ -56,6 +56,14 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
+                SLP Association
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
                 EO70
                 <i class="fas fa-angle-left right"></i>
               </p>
