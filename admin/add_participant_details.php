@@ -23,12 +23,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Mungkahing Proyekto For Microenterprise Development</h1>
+            <h1 class="m-0">Participant Details</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Conflict Vulnerable Area</a></li>
-              <li class="breadcrumb-item active">Mungkahing Proyekto For Microenterprise Development</li>
+              <li class="breadcrumb-item"><a href="#">Participants</a></li>
+              <li class="breadcrumb-item active">Participant Details</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -43,9 +43,9 @@
         <div class="row">
           <section class="col-lg-12 connectedSortable">
                 <div class="card card-primary card-outline">
-                    <div class="card-header">
+                    <!-- <div class="card-header">
                         <h3 class="card-title">Mungkahing Proyekto For Microenterprise Developement</h3>
-                    </div>
+                    </div> -->
                     <!-- /.card-header -->
                     <div class="card-body" style="padding: 0 !important;">
                         <div class="bs-stepper">
@@ -89,29 +89,59 @@
                         <label>Middlename</label>
                         <input type="text" class="form-control" placeholder="Participant Middlename">
                       </div>
-                      <div class="form-group">
-                        <label>Suffix</label>
-                        <input type="text" class="form-control" placeholder="Suffix">
+
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Suffix</label>
+                            <select class="form-control select1" required>
+                                <option>Select Suffix</option>
+                                <option>Jr.</option>
+                                <option>Sr.</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Birthday</label>
+                            <input type="date" class="form-control select1">
+                          </div>
+                        </div>
+
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Sex</label>
+                            <select class="form-control select1" required>
+                                <option>Select Sex</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>LGBTQ+</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Civil Status</label>
+                            <select class="form-control select1" required>
+                                <option>Select Civil Status</option>
+                                <option>Single</option>
+                                <option>Married</option>
+                                <option>Divorced</option>
+                                <option>Separated</option>
+                                <option>Widowed</option>
+                            </select>
+                          </div>
+                        </div>
+
                       </div>
+                       
+
                       <button class="btn btn-primary" onclick="stepper.next()">Next</button>
                     </div>
 
                     <!-- Address -->
                     <div id="basicinfo-part" class="content" role="tabpanel" aria-labelledby="basicinfo-part-trigger">
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <div class="form-group">
-                            <label>Name of SLPA</label>
-                            <input type="text" class="form-control" placeholder="Name of SLPA">
-                          </div>
-
-                          <div class="form-group">
-                            <label>Date Organized</label>
-                            <input type="date" class="form-control" placeholder="Name of SLPA">
-                          </div>
-                        </div>
-                      </div>
-
                       <div class="row">
                         <div class="col-sm-10">
                           <div class="form-group">
@@ -123,70 +153,54 @@
                               </select>
                               &nbsp
                               <!----- Select Province ----->
-                              <select class="form-control select1 col-sm-2" id="prov_id" name="prov_id"  required>
+                              <select class="form-control select1 col-sm-3" id="prov_id" name="prov_id"  required>
                                 <option>Select Province</option>
-                                <!--?php
-                                  $province_query = mysqli_query($conn, "SELECT DISTINCT prov_id, prov_n FROM lib_prov ORDER BY prov_n ASC") or die(mysqli_error());
+                                <?php
+                                  $province_query = mysqli_query($conn, "SELECT DISTINCT prov_code, prov_desc FROM province ORDER BY prov_desc ASC") or die(mysqli_error());
                                   while ($province_row = mysqli_fetch_array($province_query)) {
-                                ?-->
-                                <!--option value="<?php echo $province_row['prov_id']?>"><?php echo $province_row['prov_n']?></option-->
-                                <!--?php } ?-->
+                                ?>
+                                <option value="<?php echo $province_row['prov_code']?>"><?php echo $province_row['prov_desc']?></option-->
+                                <?php } ?>
                               </select>
 
                               &nbsp
                               <!----- Select Municipality ----->
-                              <select class="form-control select1 col-sm-2" id="mc_id" name="mc_id" required>
-                                <option>Select Municipality</option>       
+                              <select class="form-control select1 col-sm-3" id="mc_id" name="mc_id" required>
+                                <option>Select Town/City/Municipality</option>
+                                <?php
+                                  $tcm_query = mysqli_query($conn, "SELECT DISTINCT tcm_code, tcm_desc FROM tcm ORDER BY tcm_desc ASC") or die(mysqli_error());
+                                  while ($tcm_row = mysqli_fetch_array($tcm_query)) {
+                                ?>
+                                <option value="<?php echo $tcm_row['tcm_code']?>"><?php echo $tcm_row['tcm_desc']?></option-->
+                                <?php } ?>
                               </select>
                               &nbsp
 
                               <!----- Select Barangay ----->
-                              <select class="form-control select1 col-sm-2" required>
+                              <select class="form-control select1 col-sm-3" id="mc_id" name="mc_id" required>
                                 <option>Select Barangay</option>
-                              </select>               
+                                <?php
+                                  $brgy_query = mysqli_query($conn, "SELECT DISTINCT brgy_code, brgy_desc FROM barangay ORDER BY brgy_desc ASC") or die(mysqli_error());
+                                  while ($brgy_row = mysqli_fetch_array($brgy_query)) {
+                                ?>
+                                <option value="<?php echo $brgy_row['brgy_code']?>"><?php echo $brgy_row['brgy_desc']?></option-->
+                                <?php } ?>
+                              </select>            
                             </div>
                           </div>
-
-                          <div class="form-group">
-                            <label>Location of the Proposed Microenterprise</label>
-                            <div class="row">
-                              <select class="form-control select1 col-sm-3" required>
-                                <option disabled>Select Region</option>
-                                <option>Region V</option>
-                              </select>
-                              <select class="form-control select1 col-sm-3" required>
-                                <option>Select Province</option>
-                                <option>Albay</option>
-                                <option>Camarines Norte</option>
-                                <option>Camarines Sur</option>
-                                <option>Catanduanes</option>
-                                <option>Masbate</option>
-                                <option>Sorsogon</option>
-                                
-                              </select>
-                              <select class="form-control select1 col-sm-3" required>
-                                <option>Select Municipality</option>
-                                <option>Legazpi</option>
-                                <option>Naga</option>
-                                <option>Tabaco</option>
-                              </select>
-                              <select style="margin-left: 10px;" class="form-control select1 col-sm-3" required>
-                                <option>Select Barangay</option>
-                                <option>Barangay 1</option>
-                                <option>Barangay 2</option>
-                                <option>Barangay 3</option>
-                                <option>Barangay 4</option>
-                                <option>Barangay 5</option>
-                                <option>Barangay 6</option>
-                              </select>
-                            </div>
-                            
-                          </div>
+                         
                         </div>
-                        
+
                       </div>
                       
-                     
+                      <div class="form-group">
+                        <label>Street</label>
+                        <input type="text" class="form-control" placeholder="Street">
+                      </div>
+                      <div class="form-group">
+                        <label>Zone</label>
+                        <input type="text" class="form-control" placeholder="Zone">
+                      </div>
                       <button class="btn btn-default" onclick="stepper.previous()">Previous</button>
                       <button class="btn btn-primary" onclick="stepper.next()">Next</button>
                     </div>
